@@ -7,7 +7,7 @@ import { fetchGlobalData, updateRegion, cancelRocket } from '../redux/global/glo
 
 // const regionsArr = ['South America', 'Europe', 'Africa', 'Oceania', 'North America & Caribbean'];
 
-const MainStat = () => {
+const Details = () => {
   const dispatch = useDispatch();
   const loading = useSelector((store) => store.globaStats.status);
   // console.log('loading', loading);
@@ -108,4 +108,4 @@ const MainStat = () => {
   return false;
 };
 
-export default MainStat;
+export default Details;

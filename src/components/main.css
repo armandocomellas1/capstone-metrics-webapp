@@ -2,6 +2,19 @@
   width: 100%;
 }
 
+.main_container .regions_container {
+  display: flex;
+  justify-content: center;
+}
+
+.main_container .regions_container > button {
+  width: 15%;
+  background-color: rgb(223, 71, 130);
+  border: none;
+  color: rgb(255, 203, 224);
+  cursor: pointer;
+}
+
 .main_container .country_selected {
   background-color: rgb(250, 79, 145);
   width: 100%;
@@ -38,4 +51,25 @@
   font-size: 0.8rem;
   align-self: center;
   color: rgb(251, 249, 253);
+}
+
+.main_container .division_main {
+  display: flex;
+  justify-content: flex-start;
+  height: 20px
+}
+
+.main_container .division_main .title_main {
+  font-size: 0.75rem;
+  color: rgb(251, 249, 253);
+  font-weight: 400;
+  font-family: 'lato';
+  align-self: center;
+  padding-left: 1%;
+}
+
+.main_container .group_container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-auto-rows: 200px;
 }

@@ -18,7 +18,7 @@ const Navegation = () => (
           textDecoration: isActive ? 'underline 1px' : 'none',
         })}
       >
-        Select Continent
+        select continent
       </NavLink>
     </nav>
   </div>

@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import './mainRendr.css';
 
 let count = 1;
-const MainRenderer = (props) => {
+const DetailsRender = (props) => {
   const dispatch = useDispatch();
   const {
     Name,
@@ -53,4 +53,4 @@ const MainRenderer = (props) => {
   );
 };
 
-export default MainRenderer;
+export default DetailsRender;
