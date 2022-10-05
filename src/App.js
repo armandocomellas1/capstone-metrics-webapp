@@ -8,6 +8,7 @@ import {
   NavLink,
 } from 'react-router-dom';
 import MainStat from './components/Main';
+import Details from './components/Details';
 
 const Navegation = () => (
   <div className="nav_main_cont">
@@ -18,7 +19,15 @@ const Navegation = () => (
           textDecoration: isActive ? 'underline 1px' : 'none',
         })}
       >
-        select continent
+        continent pollution
+      </NavLink>
+      <NavLink
+        to="/details"
+        style={({ isActive }) => ({
+          textDecoration: isActive ? 'underline 1px' : 'none',
+        })}
+      >
+        country pollution
       </NavLink>
     </nav>
   </div>
@@ -30,6 +39,7 @@ function App() {
       <Navegation />
       <Routes>
         <Route path="/*" element={<MainStat name="Europe" />} />
+        <Route path="/details" element={<Details />} />
       </Routes>
     </BrowserRouter>
   );

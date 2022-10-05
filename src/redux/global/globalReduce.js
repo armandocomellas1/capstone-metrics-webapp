@@ -263,6 +263,7 @@ export const fetchGlobalData = createAsyncThunk(ACTION_PREPEND, async () => {
       contry: `${Object.keys(contry)[0]}`,
       Name: contry.Name,
       Region: contry.Region,
+      Country: contry.Name,
       list: (await contry[`${Object.keys(contry)[0]}`]).data.list,
     });
   });
@@ -280,6 +281,7 @@ const initialState = {
   stateArr: [],
   status: 'IDLE',
   region: '',
+  country: '',
 };
 
 const globalSlice = createSlice({
@@ -287,23 +289,10 @@ const globalSlice = createSlice({
   initialState,
   reducers: {
     updateRegion: (state, action) => {
-      // const getState = current(state).stateArr;
-      // const updateArr = [];
-      // getState.filter((cntry) => cntry.Region === action.payload).map((data) => {
-      //   updateArr.push(data);
-      //   return updateArr;
-      // });
-      // console.log('updateArr', updateArr);
       state.region = action.payload;
     },
-    cancelRocket: (state, action) => {
-      //   const getState = current(state).rockets;
-      //   for (let i = 0; i < getState.length; i += 1) {
-      //     if (getState[i].id === Number(action.payload)) {
-      //       // state.rockets.rocket = true;
-      //       state.rockets[i].reserve = false;
-      //     }
-      //   }
+    detailsCtry: (state, action) => {
+      state.country = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -320,6 +309,6 @@ const globalSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { updateRegion, cancelRocket } = globalSlice.actions;
+export const { updateRegion, detailsCtry } = globalSlice.actions;
 
 export default globalSlice.reducer;

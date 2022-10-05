@@ -12,3 +12,7 @@
   font-family: 'lato';
   font-weight: lighter;
 }
+
+.nav_main_cont .nav_menu a:nth-child(2) {
+  display: none;
+}

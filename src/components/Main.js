@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import loadingStatus from '../redux/loadStats';
 import './main.css';
 import MainRenderer from './MainRender';
-import { fetchGlobalData, updateRegion, cancelRocket } from '../redux/global/globalReduce';
+import { fetchGlobalData, updateRegion, detailsCtry } from '../redux/global/globalReduce';
 
 // const regionsArr = ['South America', 'Europe', 'Africa', 'Oceania', 'North America & Caribbean'];
 
@@ -92,7 +92,7 @@ const MainStat = () => {
           </div>
         </header>
         <div className="division_main">
-          <h3 className="title_main">STATS BY COUNTRY</h3>
+          <h3 className="title_main">STATS BY CONTINENT</h3>
         </div>
         <div className="group_container">
           {countires.filter((cntry) => cntry.Region === regions).map((data) => (

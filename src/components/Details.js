@@ -1,22 +1,26 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import loadingStatus from '../redux/loadStats';
-import './main.css';
-import MainRenderer from './MainRender';
-import { fetchGlobalData, updateRegion, cancelRocket } from '../redux/global/globalReduce';
+import './details.css';
+import DetailsRender from './DetailsRender';
+import { fetchGlobalData, updateRegion, detailsCtry } from '../redux/global/globalReduce';
 
 // const regionsArr = ['South America', 'Europe', 'Africa', 'Oceania', 'North America & Caribbean'];
 
 const Details = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const loading = useSelector((store) => store.globaStats.status);
   // console.log('loading', loading);
   const countires = useSelector((store) => store.globaStats.stateArr);
   // console.log('countries', countires);
   const regions = useSelector((store) => store.globaStats.region);
-  const updateStore = ((event) => {
-    const getEvent = event.target.innerText;
-    dispatch(updateRegion(getEvent));
+  // console.log('countries', countires);
+  const detailCtry = useSelector((store) => store.globaStats.country);
+
+  const backButton = ((event) => {
+    navigate('/mainstat');
   });
 
   useEffect(() => {
@@ -29,14 +33,14 @@ const Details = () => {
     const ctryName = countires.Name;
     const ctryRegion = countires.Region;
     const ctryStats = countires;
-    const setRegion = regions.toUpperCase();
+    const setRegion = detailCtry.toUpperCase();
     const sumPollution = {
       sumNo2: 0,
       sumO3: 0,
       sumPm10: 0,
     };
     let count = 1;
-    const regionStat = countires.filter((cntry) => cntry.Region === regions).map((data) => {
+    const regionStat = countires.filter((cntry) => cntry.Country === detailCtry).map((data) => {
       const getStats = data.list[0].components;
       const getCo = getStats.co;
       const getNh3 = getStats.nh3;
@@ -73,35 +77,29 @@ const Details = () => {
     }
 
     return (
-      <div className="main_container">
-        <div className="regions_container">
-          <button type="button" onClick={updateStore}>South America</button>
-          <button type="button" onClick={updateStore}>Europe</button>
-          <button type="button" onClick={updateStore}>Africa</button>
-          <button type="button" onClick={updateStore}>Oceania</button>
-          <button type="button" onClick={updateStore}>North America & Caribbean</button>
+      <div className="details_container">
+        <div className="countries_container">
+          <button type="button" onClick={backButton}>Back Home</button>
         </div>
-        <header className="country_selected">
+        <header className="country_selected_detail">
           <div className="europe_img" />
-          <div className="header_container">
-            <h2 className="country_name">{setRegion}</h2>
-            <p className="region_stats">
+          <div className="header_container_details">
+            <h2 className="country_name_details">{setRegion}</h2>
+            <p className="details_stats">
               Air Pollution Quality is&nbsp;
               {qualityAir.toUpperCase()}
             </p>
           </div>
         </header>
-        <div className="division_main">
-          <h3 className="title_main">STATS BY COUNTRY</h3>
+        <div className="division_details">
+          <h3 className="title_details">STATS BY COUNTRY</h3>
         </div>
-        <div className="group_container">
-          {countires.filter((cntry) => cntry.Region === regions).map((data) => (
-            <MainRenderer
-              key={`books-lisk-card-${data.Name}`}
-              {...data}
-            />
-          ))}
-        </div>
+        {countires.filter((cntry) => cntry.Country === detailCtry).map((data) => (
+          <DetailsRender
+            key={`books-lisk-card-${data.Name}`}
+            {...data}
+          />
+        ))}
       </div>
     );
   }

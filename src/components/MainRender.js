@@ -1,10 +1,14 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import './mainRendr.css';
+import { FaHandPointer } from 'react-icons/fa';
+import { Routes, Route, useNavigate } from 'react-router-dom';
+import { fetchGlobalData, updateRegion, detailsCtry } from '../redux/global/globalReduce';
 
 let count = 1;
 const MainRenderer = (props) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const {
     Name,
     Region,
@@ -38,8 +42,14 @@ const MainRenderer = (props) => {
   }
   count += 1;
 
+  const countryDetail = ((event) => {
+    const getCtryName = event.target.id;
+    dispatch(detailsCtry(getCtryName));
+    navigate('/details');
+  });
+
   return (
-    <div className="country_continaer">
+    <button type="button" className="country_continaer" id={Name} onClick={countryDetail}>
       <h3 className="title_country">{Name.toUpperCase()}</h3>
       <div className="quality_air">
         <span className="country_string">
@@ -49,7 +59,7 @@ const MainRenderer = (props) => {
           {qualityAir.toUpperCase()}
         </span>
       </div>
-    </div>
+    </button>
   );
 };
 

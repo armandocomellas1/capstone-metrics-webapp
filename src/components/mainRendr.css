@@ -5,6 +5,13 @@
   justify-content: flex-end;
   padding-bottom: 5%;
   padding-right: 3%;
+  background-color: rgb(223, 71, 130);
+  border: none;
+}
+
+.country_continaer:hover {
+  cursor: pointer;
+  color: #000;
 }
 
 .country_continaer:nth-child(4n - 2)  {
