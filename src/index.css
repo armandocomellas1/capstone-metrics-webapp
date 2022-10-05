@@ -2,10 +2,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'system-ui', sans-serif;
   width: 100%;
 }
 
 body {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(223, 71, 130);
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }

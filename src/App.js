@@ -11,18 +11,16 @@ import MainStat from './components/Main';
 
 const Navegation = () => (
   <div className="nav_main_cont">
-    <div className="nav_container">
-      <nav className="nav_menu">
-        <NavLink
-          to="/mainstat"
-          style={({ isActive }) => ({
-            textDecoration: isActive ? 'underline 2px' : 'none',
-          })}
-        >
-          MainStat
-        </NavLink>
-      </nav>
-    </div>
+    <nav className="nav_menu">
+      <NavLink
+        to="/mainstat"
+        style={({ isActive }) => ({
+          textDecoration: isActive ? 'underline 1px' : 'none',
+        })}
+      >
+        Select Continent
+      </NavLink>
+    </nav>
   </div>
 );
 
@@ -31,7 +29,7 @@ function App() {
     <BrowserRouter>
       <Navegation />
       <Routes>
-        <Route path="/*" element={<MainStat />} />
+        <Route path="/*" element={<MainStat name="Europe" />} />
       </Routes>
     </BrowserRouter>
   );
