@@ -6,17 +6,12 @@ import './details.css';
 import DetailsRender from './DetailsRender';
 import { fetchGlobalData, updateRegion, detailsCtry } from '../redux/global/globalReduce';
 
-// const regionsArr = ['South America', 'Europe', 'Africa', 'Oceania', 'North America & Caribbean'];
-
 const Details = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const loading = useSelector((store) => store.globaStats.status);
-  // console.log('loading', loading);
   const countires = useSelector((store) => store.globaStats.stateArr);
-  // console.log('countries', countires);
   const regions = useSelector((store) => store.globaStats.region);
-  // console.log('countries', countires);
   const detailCtry = useSelector((store) => store.globaStats.country);
 
   const backButton = ((event) => {
