@@ -14,6 +14,7 @@ const MainStat = () => {
   const countires = useSelector((store) => store.globaStats.stateArr);
   // console.log('countries', countires);
   const regions = useSelector((store) => store.globaStats.region);
+
   const updateStore = ((event) => {
     const getEvent = event.target.innerText;
     dispatch(updateRegion(getEvent));

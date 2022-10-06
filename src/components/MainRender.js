@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import './mainRendr.css';
-import { FaHandPointer } from 'react-icons/fa';
+import { BsArrowRightCircle } from 'react-icons/bs';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import { fetchGlobalData, updateRegion, detailsCtry } from '../redux/global/globalReduce';
 
@@ -43,13 +43,16 @@ const MainRenderer = (props) => {
   count += 1;
 
   const countryDetail = ((event) => {
-    const getCtryName = event.target.id;
+    const getCtryName = event.target.parentElement.id;
     dispatch(detailsCtry(getCtryName));
     navigate('/details');
   });
 
   return (
     <button type="button" className="country_continaer" id={Name} onClick={countryDetail}>
+      <div className="icon_main_react">
+        <div className="icon_svg"><BsArrowRightCircle /></div>
+      </div>
       <h3 className="title_country">{Name.toUpperCase()}</h3>
       <div className="quality_air">
         <span className="country_string">
