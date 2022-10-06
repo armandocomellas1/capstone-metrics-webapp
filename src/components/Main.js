@@ -5,14 +5,10 @@ import './main.css';
 import MainRenderer from './MainRender';
 import { fetchGlobalData, updateRegion, detailsCtry } from '../redux/global/globalReduce';
 
-// const regionsArr = ['South America', 'Europe', 'Africa', 'Oceania', 'North America & Caribbean'];
-
 const MainStat = () => {
   const dispatch = useDispatch();
   const loading = useSelector((store) => store.globaStats.status);
-  // console.log('loading', loading);
   const countires = useSelector((store) => store.globaStats.stateArr);
-  // console.log('countries', countires);
   const regions = useSelector((store) => store.globaStats.region);
 
   const updateStore = ((event) => {
