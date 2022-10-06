@@ -245,7 +245,7 @@ export const fetchGlobalData = createAsyncThunk(ACTION_PREPEND, async () => {
     const getLon = data[`${Object.keys(data)[0]}`].lon;
     const getName = data[`${Object.keys(data)[0]}`].name;
     const getRegion = data[`${Object.keys(data)[0]}`].region;
-    const urlPolltionData = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${getLat}&lon=${getLon}&appid=${apiKey}`;
+    const urlPolltionData = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${getLat}&lon=${getLon}&appid=${apiKey}`;
     const response = axios.get(urlPolltionData);
     const result = response.data;
     const objCtry = {};

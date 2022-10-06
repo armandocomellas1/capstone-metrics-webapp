@@ -27,7 +27,7 @@ If you want to clone this project:
 
 ## Live demo video (Netlify deployment) you click here:
 
-[live server](https://neon-tapioca-8259d3.netlify.app/)
+[live server](https://meek-cucurucho-0a7b75.netlify.app/details)
 
 ## Available Scripts
 
@@ -39,7 +39,7 @@ If you want to clone this project:
 - GitHub
 - Webpack
 - ECMA6
-- Components such as missions and rockets reducers, actions and styling files.
+- Components such as Main, MainRenderer and Details JavaScript files, reducers, actions and styling files.
 
 ## Getting Started with Create React App
 
@@ -82,15 +82,9 @@ If you want to clone this project:
 - Twitter: [@armando_comellas](https://twitter.com/armando_comellas)
 - LinkedIn: [@armandoComellasd](https://www.linkedin.com/in/armando-comellas-mayo-a8a8b8b6/)
 
-## Author2
-👤 **Tamana Balkhi**
+## Authors credits
 
-- GitHub: [@tamana-Balkhi](https://github.com/tamana-Balkhi)
-- Twitter:[@TAMANA1377](https://twitter.com/TAMANA1377)
-- LinkedIn:[Tamana balkhi](https://www.linkedin.com/in/tamana-balkhi-1212171b6/)
-
-## Authors notice
-- Thank you @tamana for helping in this project we were working together according the instructions.
+- Thanks to [Nelson Sakwa](https://www.behance.net/gallery/31579789/Ballhead-App-(Free-PSDs)) for the amazing work she did in the [Ballhead App (Free PSDs)](https://www.behance.net/sakwadesignstudio), which was used as a reference and guide for this webpage.
 
 ## Show your support
 
