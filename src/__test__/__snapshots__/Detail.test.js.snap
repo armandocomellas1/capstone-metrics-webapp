@@ -1,25 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[` 1`] = `null`;
-
-exports[`test if details page works correctly renders correctly 1`] = `
-  <div>
-    <div>
-      <button>Back Home</button>
-    </div>
-    <header>
-      <div/>
-      <div>
-        <h2></h2>
-        <p>
-          Air Pollution Quality is&nbsp;
-        </p>
-      </div>
-    </header>
-    <div>
-      <h3 className="title_details">STATS BY COUNTRY</h3>
-    </div>
-  </div>
-`;
-
 exports[`test if details page works correctly renders correctly Test Main component renders 1`] = `null`;

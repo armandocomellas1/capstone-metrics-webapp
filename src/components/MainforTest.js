@@ -1,21 +1,19 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { Routes, Route, useNavigate } from 'react-router-dom';
 import loadingStatus from '../redux/loadStats';
-import './details.css';
-import DetailsRender from './DetailsRender';
+import './main.css';
+import MainRenderer from './MainRender';
 import { fetchGlobalData, updateRegion, detailsCtry } from '../redux/global/globalReduce';
 
-const Details = () => {
+const MainStatTest = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const loading = useSelector((store) => store.globaStats.status);
-  const countires = useSelector((store) => store.globaStats.stateArr);
-  const regions = useSelector((store) => store.globaStats.region);
-  const detailCtry = useSelector((store) => store.globaStats.country);
+  const loading = useSelector((store) => store.myState);
+  const countires = useSelector((store) => store.myState);
+  const regions = useSelector((store) => store.myState);
 
-  const backButton = ((event) => {
-    navigate('/mainstat');
+  const updateStore = ((event) => {
+    const getEvent = event.target.innerText;
+    dispatch(updateRegion(getEvent));
   });
 
   useEffect(() => {
@@ -28,14 +26,14 @@ const Details = () => {
     const ctryName = countires.Name;
     const ctryRegion = countires.Region;
     const ctryStats = countires;
-    const setRegion = detailCtry.toUpperCase();
+    const setRegion = regions.toUpperCase();
     const sumPollution = {
       sumNo2: 0,
       sumO3: 0,
       sumPm10: 0,
     };
     let count = 1;
-    const regionStat = countires.filter((cntry) => cntry.Country === detailCtry).map((data) => {
+    const regionStat = countires.filter((cntry) => cntry.Region === regions).map((data) => {
       const getStats = data.list[0].components;
       const getCo = getStats.co;
       const getNh3 = getStats.nh3;
@@ -72,33 +70,39 @@ const Details = () => {
     }
 
     return (
-      <div className="details_container">
-        <div className="countries_container">
-          <button type="button" onClick={backButton}>Back Home</button>
+      <div className="main_container">
+        <div className="regions_container">
+          <button type="button" onClick={updateStore}>South America</button>
+          <button type="button" onClick={updateStore}>Europe</button>
+          <button type="button" onClick={updateStore}>Africa</button>
+          <button type="button" onClick={updateStore}>Oceania</button>
+          <button type="button" onClick={updateStore}>North America & Caribbean</button>
         </div>
-        <header className="country_selected_detail">
+        <header className="country_selected">
           <div className="europe_img" />
-          <div className="header_container_details">
-            <h2 className="country_name_details">{setRegion}</h2>
-            <p className="details_stats">
+          <div className="header_container">
+            <h2 className="country_name">{setRegion}</h2>
+            <p className="region_stats">
               Air Pollution Quality is&nbsp;
               {qualityAir.toUpperCase()}
             </p>
           </div>
         </header>
-        <div className="division_details">
-          <h3 className="title_details">STATS BY COUNTRY</h3>
+        <div className="division_main">
+          <h3 className="title_main">STATS BY CONTINENT</h3>
         </div>
-        {countires.filter((cntry) => cntry.Country === detailCtry).map((data) => (
-          <DetailsRender
-            key={`books-lisk-card-${data.Name}`}
-            {...data}
-          />
-        ))}
+        <div className="group_container">
+          {countires.filter((cntry) => cntry.Region === regions).map((data) => (
+            <MainRenderer
+              key={`books-lisk-card-${data.Name}`}
+              {...data}
+            />
+          ))}
+        </div>
       </div>
     );
   }
-  return detailCtry;
+  return false;
 };
 
-export default Details;
+export default MainStatTest;
