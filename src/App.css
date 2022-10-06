@@ -9,7 +9,7 @@
   justify-content: center;
   color: rgb(255, 203, 224);
   cursor: not-allowed;
-  font-family: 'lato';
+  font-family: 'lato', sans-serif;
   font-weight: lighter;
 }
 

@@ -56,14 +56,14 @@
 .main_container .division_main {
   display: flex;
   justify-content: flex-start;
-  height: 20px
+  height: 20px;
 }
 
 .main_container .division_main .title_main {
   font-size: 0.75rem;
   color: rgb(251, 249, 253);
   font-weight: 400;
-  font-family: 'lato';
+  font-family: 'lato', sans-serif;
   align-self: center;
   padding-left: 5%;
 }

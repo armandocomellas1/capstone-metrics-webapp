@@ -57,14 +57,14 @@
 .details_container .division_details {
   display: flex;
   justify-content: flex-start;
-  height: 20px
+  height: 20px;
 }
 
 .details_container .division_details .title_details {
   font-size: 0.75rem;
   color: rgb(251, 249, 253);
   font-weight: 400;
-  font-family: 'lato';
+  font-family: 'lato', sans-serif;
   align-self: center;
   padding-left: 5%;
 }
