@@ -1,0 +1,85 @@
+.country_continaer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 5%;
+  padding-right: 3%;
+  background-color: rgb(223, 71, 130);
+  border: none;
+}
+
+.country_continaer:hover {
+  cursor: pointer;
+  color: #000;
+}
+
+.country_continaer:nth-child(4n - 2) {
+  background-image: url(../img/even.PNG);
+  background-position: 10% 10%;
+  background-repeat: no-repeat, repeat;
+  height: auto;
+  background-color: rgb(206, 65, 118);
+}
+
+.country_continaer:nth-child(4n - 1) {
+  background-image: url(../img/even.PNG);
+  background-position: 10% 10%;
+  background-repeat: no-repeat, repeat;
+  height: auto;
+  background-color: rgb(206, 65, 118);
+}
+
+.country_continaer:nth-child(4n - 0) {
+  background-image: url(../img/odd.PNG);
+  background-position: 10% 10%;
+  background-repeat: no-repeat, repeat;
+  height: auto;
+  background-color: rgb(221, 72, 130);
+}
+
+.country_continaer:nth-child(4n - 3) {
+  background-image: url(../img/odd.PNG);
+  background-position: 10% 10%;
+  background-repeat: no-repeat, repeat;
+  height: auto;
+  background-color: rgb(221, 72, 130);
+}
+
+.country_continaer .icon_main_react {
+  color: white;
+  font-size: 1.2rem;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.country_continaer .icon_main_react .icon_svg {
+  position: absolute;
+  width: 25px;
+  top: 3%;
+  right: -3%;
+}
+
+.country_continaer .title_country {
+  text-align: end;
+  color: rgb(249, 238, 242);
+  font-size: 0.9rem;
+}
+
+.country_continaer .quality_air {
+  display: flex;
+  flex-direction: column;
+}
+
+.country_continaer .quality_air .country_string {
+  color: rgb(236, 187, 209);
+}
+
+.country_continaer .quality_air .country_result {
+  color: rgb(253, 253, 251);
+  font-size: 0.9rem;
+}
+
+.country_continaer .quality_air > span {
+  text-align: right;
+}

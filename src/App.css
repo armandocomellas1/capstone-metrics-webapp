@@ -1,0 +1,18 @@
+.nav_main_cont .nav_menu {
+  display: flex;
+  justify-content: center;
+  padding: 1% 0;
+}
+
+.nav_main_cont .nav_menu > a {
+  display: flex;
+  justify-content: center;
+  color: rgb(255, 203, 224);
+  cursor: not-allowed;
+  font-family: 'lato', sans-serif;
+  font-weight: lighter;
+}
+
+.nav_main_cont .nav_menu a:nth-child(2) {
+  display: none;
+}

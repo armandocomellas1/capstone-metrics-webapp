@@ -1,0 +1,39 @@
+.country_continaer_stats {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.country_continaer_stats .container_element {
+  display: flex;
+  align-items: center;
+  height: 60px;
+}
+
+.country_continaer_stats .container_element:nth-child(odd) {
+  display: flex;
+  background-color: rgb(235, 75, 137);
+}
+
+.country_continaer_stats .container_element .component_country_stats {
+  text-align: end;
+  padding-right: 10%;
+  color: rgb(255, 220, 238);
+  width: 15%;
+}
+
+.country_continaer_stats .container_element .title_country_stats {
+  text-align: start;
+  padding-left: 3%;
+  color: rgb(255, 220, 238);
+  font-weight: lighter;
+  font-size: 1.2rem;
+  width: 70%;
+}
+
+.country_continaer_stats .container_element .icon_main_react {
+  color: white;
+  font-size: 1.2rem;
+  display: flex;
+  width: 15%;
+}
